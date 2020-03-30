@@ -2,11 +2,10 @@
 //  Entry.swift
 //  CloudKitJournal
 //
-//  Created by Zebadiah Watson on 3/26/20.
-//  Copyright © 2020 Zebadiah Watson. All rights reserved.
+//  Created by Jake Haslam on 3/30/20.
+//  Copyright © 2020 Jake Haslam. All rights reserved.
 //
 
-import Foundation
 import CloudKit
 
 struct EntryConstants {
