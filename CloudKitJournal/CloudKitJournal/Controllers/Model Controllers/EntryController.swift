@@ -2,8 +2,8 @@
 //  EntryController.swift
 //  CloudKitJournal
 //
-//  Created by Zebadiah Watson on 3/26/20.
-//  Copyright © 2020 Zebadiah Watson. All rights reserved.
+//  Created by Jake Haslam on 3/30/20.
+//  Copyright © 2020 Jake Haslam. All rights reserved.
 //
 
 import Foundation
@@ -11,7 +11,7 @@ import CloudKit
 
 class EntryController {
     
-    // Properties
+    // MARK: - Properties
     static let sharedInstance = EntryController()
     
     var entries: [Entry] = []
@@ -24,7 +24,7 @@ class EntryController {
         save(entry: newEntry, completion: completion)
     }
 
-    // C.R.U.D. Methods
+    // MARK: - C.R.U.D. Methods
     func save(entry: Entry, completion: @escaping (_ result: Result<Entry?, EntryError>) -> Void) {
 
         let entryRecord = CKRecord(entry: entry)
@@ -38,7 +38,7 @@ class EntryController {
             guard let record = record,
             let savedEntry = Entry(ckRecord: record)
                 else { completion(.failure(.couldNotUnwrap)); return }
-            print("new Entry saved successfully")
+            print("New Entry saved successfully")
             self.entries.insert(savedEntry, at: 0)
             completion(.success(savedEntry))
         }
